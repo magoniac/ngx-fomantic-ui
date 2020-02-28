@@ -1,5 +1,8 @@
 export {
   FuiSidebarModule,
   SidebarDirection,
-  SidebarTransition
+  SidebarTransition,
+  FuiSidebar,
+  FuiSidebarSibling,
+  FuiSidebarContainer
 } from './internal';

@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
 import {FuiMessageModule, FuiPaginationModule} from './collections/internal';
 import {
   FuiAccordionModule,
@@ -47,7 +47,8 @@ import {FuiUtilityModule} from './misc/internal';
     FuiLocalizationModule,
 
     FuiUtilityModule
-  ]
+  ],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class FomanticUIModule {
 }

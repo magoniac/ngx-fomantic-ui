@@ -1,10 +1,11 @@
 export {
   FuiModalModule,
   FuiModalService,
-  Modal as FuiModal,
+  FuiModal,
+  Modal as ModalHelper,
   ModalResult,
   ModalControls,
-  ActiveModal as FuiActiveModal,
+  ActiveModal as ActiveModalHelper,
   ModalConfig,
   TemplateModalConfig,
   ComponentModalConfig,

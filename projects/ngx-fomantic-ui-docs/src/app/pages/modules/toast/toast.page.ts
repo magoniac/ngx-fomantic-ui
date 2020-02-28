@@ -48,7 +48,7 @@ const exampleDurationTemplate = `
 `;
 
 const exampleMessageStyleTemplate = `
-    <fui-toast [class]="'purple'" [className]="'ui message'">
+    <fui-toast [class]="'purple'" >
       <ng-template fuiToastTitle>Awesome</ng-template>
       <ng-template fuiToastMessage>I got my style from the message class</ng-template>
     </fui-toast>

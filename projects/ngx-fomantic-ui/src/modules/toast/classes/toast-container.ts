@@ -15,7 +15,6 @@ import {FuiToastConfig} from './toast-config';
                [showIcon]="toast.showIcon"
                [closeIcon]="toast.closeIcon"
                [progressUp]="toast.progressUp"
-               [className]="toast.className"
                (close)="closeToast(toast.id)"></fui-toast>`
 })
 export class FuiToastContainer {
