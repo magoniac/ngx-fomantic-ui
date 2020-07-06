@@ -38,6 +38,8 @@ export abstract class FuiSelectBase<T, U> implements AfterContentInit, OnDestroy
   public transition: string;
   @Input()
   public transitionDuration: number;
+  @Input()
+  public autoOpenOnFocus: boolean;
   @Output('touched')
   public onTouched: EventEmitter<void>;
   @ViewChild(FuiDropdownMenu, {static: true})
@@ -68,6 +70,7 @@ export abstract class FuiSelectBase<T, U> implements AfterContentInit, OnDestroy
     this.icon = 'dropdown';
     this.transition = 'slide down';
     this.transitionDuration = 200;
+    this.autoOpenOnFocus = true;
 
     this.onTouched = new EventEmitter<void>();
 
@@ -286,8 +289,10 @@ export abstract class FuiSelectBase<T, U> implements AfterContentInit, OnDestroy
 
   @HostListener('focusin')
   public onFocusIn(): void {
+    
     if (!this.dropdownService.isOpen && !this.dropdownService.isAnimating) {
-      this.dropdownService.setOpenState(true);
+      if (this.autoOpenOnFocus)
+        this.dropdownService.setOpenState(true);
 
       this.focus();
     }

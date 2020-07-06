@@ -20,7 +20,7 @@ interface IConfirmModalContext {
 `
 })
 export class ConfirmModalComponent {
-    constructor(public modal: FuiModal<IConfirmModalContext, void, void>) {}
+    constructor(public modal: FuiModal<IConfirmModalContext, void>) {}
 }
 
 export class ConfirmModal extends ComponentModalConfig<IConfirmModalContext, void, void> {

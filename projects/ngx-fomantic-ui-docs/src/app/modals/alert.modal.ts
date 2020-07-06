@@ -19,7 +19,7 @@ interface IAlertModalContext {
 `
 })
 export class AlertModalComponent {
-    constructor(public modal: FuiModal<IAlertModalContext, void, void>) {}
+    constructor(public modal: FuiModal<IAlertModalContext, void>) {}
 }
 
 export class AlertModal extends ComponentModalConfig<IAlertModalContext, void, void> {

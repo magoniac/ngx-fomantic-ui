@@ -104,6 +104,18 @@ const exampleClearableTemplate = `
 </fui-select>
 `;
 
+const exampleAutoOpenOnFocusTemplate = `
+<fui-select class="selection"
+            [(ngModel)]="selectedOption"
+            [options]="filters"
+            [autoOpenOnFocus]="false"
+            #select>
+    <fui-select-option *ngFor="let option of select.filteredOptions"
+                       [value]="option">
+    </fui-select-option>
+</fui-select>
+`;
+
 const exampleInMenuSearchTemplate = `
 <fui-multi-select [(ngModel)]="selected"
                   [options]="options"
@@ -235,10 +247,16 @@ export class SelectPage {
                     defaultValue: 'false'
                 },
                 {
-                    name: 'isСlearable',
+                    name: 'isClearable',
                     type: 'boolean',
                     description: 'Sets whether the select is clearable.',
                     defaultValue: 'false'
+                },
+                {
+                    name: 'autoOpenOnFocus',
+                    type: 'boolean',
+                    description: 'Sets whether the select is auto opened upon getting focus.',
+                    defaultValue: 'true'
                 },
                 {
                     name: 'optionFormatter',
@@ -435,6 +453,7 @@ export class SelectPage {
     public exampleStandardTemplate: string = exampleStandardTemplate;
     public exampleVariationsTemplate: string = exampleVariationsTemplate;
     public exampleClearableTemplate: string = exampleClearableTemplate;
+    public exampleAutoOpenOnFocusTemplate: string = exampleAutoOpenOnFocusTemplate;
     public exampleInMenuSearchTemplate: string = exampleInMenuSearchTemplate;
     public exampleTemplateTemplate: string = exampleTemplateTemplate;
     public formatterCode = `
@@ -505,6 +524,15 @@ export class SelectClearableExample {
 }
 
 @Component({
+    selector: 'example-auto-open-on-focus-select',
+    template: exampleAutoOpenOnFocusTemplate
+})
+export class SelectAutoOpenOnFocusExample {
+    public selectedOption: string;
+    public filters: string[] = ['Important', 'Announcement', 'Discussion'];
+}
+
+@Component({
     selector: 'example-select-in-menu-search',
     template: exampleInMenuSearchTemplate
 })
@@ -557,6 +585,7 @@ export const SelectPageComponents = [
     SelectExampleStandard,
     SelectExampleVariations,
     SelectClearableExample,
+    SelectAutoOpenOnFocusExample,
     SelectExampleInMenuSearch,
     SelectExampleTemplate,
     SelectExampleLookupSearch
